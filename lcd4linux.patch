@@ -1,0 +1,32 @@
+diff -u lcd4linux/cfg.c lcd4linux_11/cfg.c
+--- lcd4linux/cfg.c	2011-05-09 21:39:38.457018265 +0200
++++ lcd4linux_11/cfg.c	2011-05-09 21:10:14.245017770 +0200
+@@ -498,8 +498,8 @@
+ static int cfg_read(const char *file)
+ {
+     FILE *stream;
+-    char buffer[256];
+-    char section[256];
++    char buffer[512];
++    char section[512];
+     char *line, *key, *val, *end;
+     int section_open, section_close;
+     int error, lineno;
+@@ -515,7 +515,7 @@
+ 
+     error = 0;
+     lineno = 0;
+-    while ((line = fgets(buffer, 256, stream)) != NULL) {
++    while ((line = fgets(buffer, 512, stream)) != NULL) {
+ 
+ 	/* increment line number */
+ 	lineno++;
+Les sous-rÃ©pertoires lcd4linux/contrib et lcd4linux_11/contrib sont identiques.
+Les sous-rÃ©pertoires lcd4linux/.svn et lcd4linux_11/.svn sont identiques.
+diff -u lcd4linux/svn_version.h lcd4linux_11/svn_version.h
+--- lcd4linux/svn_version.h	2011-05-09 21:39:38.545017943 +0200
++++ lcd4linux_11/svn_version.h	2011-05-09 21:24:26.141027573 +0200
+@@ -1 +1 @@
+-#define SVN_VERSION "1092"
++#define SVN_VERSION "1092a"
+
